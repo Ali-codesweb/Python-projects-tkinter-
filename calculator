@@ -1,0 +1,48 @@
+from tkinter import *
+root = Tk()
+
+def label(text1, row1, column1):
+    mylabel = Label(root, text = text1)
+    mylabel.grid(row = row1, column = column1)
+
+label("                                                                                                                                                                                                                              ",1,1)
+label("Calculator App!!",1,2)
+
+label("ENter any two numbers",2,2)
+
+entry1 = Entry(root, width=30,borderwidth=2)
+entry1.grid(row=3,column=1)
+entry2 = Entry(root,width=30,borderwidth=3)
+entry2.grid(row=3,column=2)
+
+def add():
+    label(int(entry1.get())+int(entry2.get()), 6,1)
+
+def subtract():
+    label(int(entry1.get())-int(entry2.get()),6,1)
+
+def divide():
+    label(int(entry1.get()) / int(entry2.get()), 6, 1)
+
+def multiply():
+    label(int(entry1.get()) * int(entry2.get()), 6, 1)
+
+
+
+
+#buttons
+add = Button(root,text="+", padx=5,pady=5,command=add)
+add.grid(row=4,column=1)
+
+subtract = Button(root,text="-", padx=5,pady=5, command=subtract)
+subtract.grid(row=4,column=2)
+
+multiply = Button(root,text="*", padx=5,pady=5, command=multiply)
+multiply.grid(row=5,column=1)
+
+divide = Button(root,text="/", padx=5,pady=5,command=divide)
+divide.grid(row=5,column=2)
+
+
+
+root.mainloop()
